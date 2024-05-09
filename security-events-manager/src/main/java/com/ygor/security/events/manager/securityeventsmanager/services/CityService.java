@@ -22,11 +22,13 @@ import java.util.Optional;
 @Service
 public class CityService {
 
+    private final CityRepository cityRepository;
+    private final EventRepository eventRepository;
     @Autowired
-    CityRepository cityRepository;
-
-    @Autowired
-    EventRepository eventRepository;
+    CityService(EventRepository eventRepository, CityRepository cityRepository) {
+        this.eventRepository = eventRepository;
+        this.cityRepository = cityRepository;
+    }
 
     @Transactional(readOnly = true)
     public Page<CityDTO> findAllPaged(Pageable pageable) {

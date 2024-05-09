@@ -29,15 +29,15 @@ import java.util.stream.Collectors;
 public class UserService {
 
     private final PasswordEncoder passwordEncoder;
+    private final UserRepository userRepository;
+    private final RoleRepository roleRepository;
     @Autowired
-    public UserService(PasswordEncoder passwordEncoder) {
+    public UserService(PasswordEncoder passwordEncoder, UserRepository userRepository, RoleRepository roleRepository) {
         this.passwordEncoder = passwordEncoder;
+        this.userRepository = userRepository;
+        this.roleRepository = roleRepository;
     }
 
-    @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private RoleRepository roleRepository;
 
     @Transactional(readOnly = true)
     public Page<UserDTO> findAllPaged(Pageable pageable) {

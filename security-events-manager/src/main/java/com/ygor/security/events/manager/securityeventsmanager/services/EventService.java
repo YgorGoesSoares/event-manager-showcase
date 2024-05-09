@@ -21,11 +21,16 @@ import java.util.Optional;
 @Service
 public class EventService {
 
-    @Autowired
-    private EventRepository eventRepository;
+    private final EventRepository eventRepository;
+
+    private final CityRepository cityRepository;
 
     @Autowired
-    private CityRepository cityRepository;
+    EventService(EventRepository eventRepository, CityRepository cityRepository) {
+        this.eventRepository = eventRepository;
+        this.cityRepository = cityRepository;
+    }
+
     @Transactional(readOnly = true)
     public Page<EventDTO> findAllPaged(Pageable pageable) {
         Page<Event> list = eventRepository.findAll(pageable);
