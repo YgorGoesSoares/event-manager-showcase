@@ -13,6 +13,7 @@ Este é um projeto de um gerenciador de eventos desenvolvido em Java utilizando 
 - **H2 Database**: Banco de dados em memória para armazenamento de dados durante a execução.
 - **Lombok**: Biblioteca para simplificar o desenvolvimento.
 - **Maven**: Gerenciador de dependências para a construção do projeto.
+- **JUnit e Mockito**: Ferramentas para escrita de Testes Unitários.
 
 ## Regras de Autorização com Spring Security
 
@@ -24,6 +25,10 @@ As seguintes regras de autorização são aplicadas na aplicação:
 4. Todos os demais endpoints requerem login de **ADMIN**.
 
 A collection do Insomnia com as requisições prontas está na pasta /resources/Insomnia_2024-05-08.json
+
+## Testes
+
+O projeto possui testes unitários escritos com JUnit e Mockito para garantir a qualidade do código e a integridade das funcionalidades.
 
 ## Diagrama de Classes
 
@@ -71,5 +76,7 @@ A aplicação possui os seguintes usuários para testar as requisições:
 ## Contribuição
 
 Sinta-se à vontade para contribuir com o projeto enviando pull requests ou reportando issues.
+
+---
 
 Feito por Ygor Goes | [LinkedIn](https://linkedin.com/in/ygor-goes)
