@@ -28,6 +28,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(
                         auth -> auth.requestMatchers(HttpMethod.GET, "/cities/**", "/events/**", "/token/scopes/**").permitAll()
                                 .requestMatchers(HttpMethod.POST, "/authenticate").permitAll()
+                                .requestMatchers("/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**").permitAll()
                                 .requestMatchers(HttpMethod.POST, "/events").hasAnyAuthority("ROLE_ADMIN", "ROLE_CLIENT")
                                 .anyRequest().hasAuthority("ROLE_ADMIN")
                 ).httpBasic(Customizer.withDefaults())

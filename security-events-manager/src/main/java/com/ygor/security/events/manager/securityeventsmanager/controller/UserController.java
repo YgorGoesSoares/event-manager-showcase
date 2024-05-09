@@ -3,6 +3,7 @@ package com.ygor.security.events.manager.securityeventsmanager.controller;
 import com.ygor.security.events.manager.securityeventsmanager.dtos.UserDTO;
 import com.ygor.security.events.manager.securityeventsmanager.dtos.UserInsertDTO;
 import com.ygor.security.events.manager.securityeventsmanager.services.UserService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,6 +16,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping(value = "/users")
+@SecurityRequirement(name = "bearer-key")
 public class UserController {
 
     @Autowired

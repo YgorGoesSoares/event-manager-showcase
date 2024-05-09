@@ -2,6 +2,7 @@ package com.ygor.security.events.manager.securityeventsmanager.controller;
 
 import com.ygor.security.events.manager.securityeventsmanager.dtos.CityDTO;
 import com.ygor.security.events.manager.securityeventsmanager.services.CityService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -14,6 +15,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping(value = "/cities")
+@SecurityRequirement(name = "bearer-key")
 public class CityController {
 
     @Autowired

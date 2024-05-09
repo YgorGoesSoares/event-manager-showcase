@@ -3,6 +3,7 @@ package com.ygor.security.events.manager.securityeventsmanager.controller;
 import com.ygor.security.events.manager.securityeventsmanager.dtos.EventDTO;
 import com.ygor.security.events.manager.securityeventsmanager.repository.EventRepository;
 import com.ygor.security.events.manager.securityeventsmanager.services.EventService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,6 +16,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping(value = "/events")
+@SecurityRequirement(name = "bearer-key")
 public class EventController {
 
     @Autowired
