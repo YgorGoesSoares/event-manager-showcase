@@ -27,7 +27,7 @@ As seguintes regras de autorização são aplicadas na aplicação:
 
 Abaixo está o diagrama de classes da aplicação:
 
-![Diagrama de Classes](event-manager-showcase/security-events-manager/src/main/resources/templates/diagram.png)
+![Diagrama de Classes](https://github.com/YgorGoesSoares/event-manager-showcase/raw/main/event-manager-showcase/security-events-manager/src/main/resources/templates/diagram.png)
 
 ## Como Configurar e Executar o Projeto
 
